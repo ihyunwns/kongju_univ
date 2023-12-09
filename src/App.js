@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import DisplayImage from './components/displayImage.js';
+import ImageUpload from './components/upload.js';
+import axios from 'axios';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <div className='Navi'> <img onClick={ () => {axios.get('http://localhost:3001/upload').then((res) => {console.log(res.data)}).catch((error) => {console.log(error)}) } } className='main-logo' src='/logo.jpg'  />공주대학교 이미지 업로드 홈페이지</div>
+      <ImageUpload />
+      <DisplayImage />
     </div>
   );
 }

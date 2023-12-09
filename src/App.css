@@ -7,6 +7,54 @@
   pointer-events: none;
 }
 
+.upload-file{
+  text-align: left;
+  padding-left: 20px;
+}
+
+.upload-filedata{
+  margin-top: 10px;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid slategrey;
+}
+
+.display-img{
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 50px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.image{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.main-logo{
+  width: 30px;
+  height: 30px;
+  padding-top: 35px;
+  padding-right: 10px;
+}
+
+.Navi{
+  line-height: 100px;
+  background-color: black;
+  padding-left: 20px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  margin-bottom: 10px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
