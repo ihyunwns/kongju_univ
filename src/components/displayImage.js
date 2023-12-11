@@ -3,6 +3,9 @@ import imageData from '../config/imageURL.json'
 
 function DisplayImage(){
 
+    // S3 이미지 파일 불러오기 !
+    // 카테고리에 따라서 !
+
     return(
         <>
         {/* S3에서 불러온 사진 정렬해서 보여줌 */}
