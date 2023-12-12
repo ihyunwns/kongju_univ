@@ -1,10 +1,20 @@
+import { useEffect, useState } from 'react';
 import '../App.css';
-import imageData from '../config/imageURL.json'
+import { fetchImageData } from '../utils/fetchImage';
 
-function DisplayImage(){
+export function DisplayImage(props){
 
-    // S3 이미지 파일 불러오기 !
-    // 카테고리에 따라서 !
+    const [imageURL, setImageURL] = useState([]);
+    
+    const handleData = async () => {
+        const array_url = await fetchImageData(props.selectCategory); 
+        setImageURL(array_url);
+    }
+
+    // 렌더링 시, handleData 시행
+    useEffect( () => {
+        handleData();
+    }, [ props.uploadState, props.selectCategory ]);
 
     return(
         <>
@@ -12,10 +22,10 @@ function DisplayImage(){
         <div className="image-grid">
          {
 
-         imageData.map((image, index) => (
+         imageURL.map((image, index) => (
             <div key={index} className="grid-item">
                 <img className="image" src={image.url} alt={`Image ${index}`} />
-                <div className='image-name'> {image.name} </div>
+                <div className='image-name'> {image.title} </div>
             </div>
             
          ))}
@@ -24,6 +34,3 @@ function DisplayImage(){
         </>
     ); 
 }
-
-export default DisplayImage;
-
